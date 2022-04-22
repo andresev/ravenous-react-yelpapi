@@ -18,17 +18,25 @@ class SearchBar extends React.Component {
 
     //this.handleSortByChange = this.handleSortByChange.bind(this);
   }
-  
+
   getSortByClass(sortByOption) {
-    if(this.state.sortBy === sortByOption) {
+    if (this.state.sortBy === sortByOption) {
       return 'active';
-    } 
-      return '';
+    }
+    return '';
   }
 
   handleSortByChange(sortByOption) {
     this.setState({ sortBy: sortByOption })
-    
+
+  }
+
+  handleTermChange(e) {
+    //this.setState({ term: event.target.value });
+  }
+
+  handleLocationChange(e) {
+    //this.setState({ location: event.target.value });
   }
 
   renderSortByOptions() {
@@ -39,21 +47,21 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    return(
-    <div className="SearchBar">
-      <div className="SearchBar-sort-options">
-        <ul>
-          {this.renderSortByOptions()}
-        </ul>
+    return (
+      <div className="SearchBar">
+        <div className="SearchBar-sort-options">
+          <ul>
+            {this.renderSortByOptions()}
+          </ul>
+        </div>
+        <div className="SearchBar-fields">
+          <input placeholder="Search Businesses" />
+          <input placeholder="Where?" />
+        </div>
+        <div className="SearchBar-submit">
+          <a>Let's Go OUT!!</a>
+        </div>
       </div>
-      <div className="SearchBar-fields">
-        <input placeholder="Search Businesses" />
-        <input placeholder="Where?" />
-      </div>
-      <div className="SearchBar-submit">
-        <a>Let's Go OUT!!</a>
-      </div>
-    </div>
     );
   }
 }
