@@ -24,7 +24,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Ravenous</h1>
         <SearchBar />
-        <BusinessList businesses={businesses}/>
+        <BusinessList businesses={businesses} />
       </div>
     );
   }
